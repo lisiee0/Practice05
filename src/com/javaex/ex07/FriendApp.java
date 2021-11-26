@@ -13,17 +13,9 @@ public class FriendApp {
 
         //친구정보 3명 입력 로직 --> 반복문 사용
         String name, hp, school;
-        Friend fr1= new Friend();
-        friendArray[0]= fr1;
+        int a= 0;
         
-        Friend fr2= new Friend();
-        friendArray[1]= fr2;
-        
-        Friend fr3= new Friend();
-        friendArray[2]= fr3;
-  
-        for(int i= 0; i<friendArray.length; i++) {
-        	
+        do {
         	System.out.print("이름: ");
         	name= sc.nextLine();
 
@@ -35,10 +27,14 @@ public class FriendApp {
         	
         	System.out.println("------------------------------");
         	
-        	friendArray[i].setName(name);
-        	friendArray[i].setHp(hp);
-        	friendArray[i].setSchool(school);
+        	friendArray[a]= new Friend();
+        	friendArray[a].setName(name);
+        	friendArray[a].setHp(hp);
+        	friendArray[a].setSchool(school);
+        	a++;
         }
+        while (a<friendArray.length);
+       
        
         // 친구정보 출력
         for (int i = 0; i < friendArray.length; i++) {
